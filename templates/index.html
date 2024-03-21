@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang chủ</title>
+    <link rel="stylesheet" href="/static/css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css" />
+  
+</head>
+<body>
+<header>
+    <h2 id="username">{{ current_user.TenNguoiDung }}</h2>
+<div id="header-image">
+</div>
+</header>
+<main class="container-note">
+    <div class="sidebar">
+        <h2 id="web-name"><i class="fa-brands fa-wordpress"></i> Website Notes</h2>
+        <a href="{{ url_for('index') }}"><i class="fas fa-solid fa-house"></i> Trang chủ</a>
+        <a href="{{ url_for('ghi_chu') }}"><i class="fas fa-solid fa-note-sticky"></i> Ghi chú</a>
+        <a href="{{ url_for('cong_viec') }}"><i class="fas fa-solid fa-list"></i> Công việc</a>
+        <a href="{{ url_for('su_kien') }}"><i class="fas fa-solid fa-calendar-days"></i> Sự kiện</a>
+        <a href="{{ url_for('doi_mat_khau') }}"><i class="fas fa-solid fa-unlock-keyhole"></i> Đổi mật khẩu</a>
+        <a href="{{ url_for('dang_xuat') }}"><i class="fas fa-solid fa-arrow-right-from-bracket"></i> Thoát</a>
+    </div>
+    
+    <div class="content-index">
+        <div class="card-container-index">
+            <h2 id="note-title">Ghi chú</h2>
+            {% for note in ghiChuNguoiDung %}
+                <div class="card">
+                    <h4>{{ note.TieuDe }}</h4>
+                    <p>{{ note.NoiDung }}</p>
+                    <p id="time"><i>{{ thoiGianTruoc(note.NgayTaoGhiChu) }}</i></p>
+                
+                </div>
+            {% endfor %}
+            <div class="card card-add">
+                <h4>
+                    <a href="{{ url_for('ghi_chu') }}"><i class="fa-solid fa-plus add-index"></i></a>        </h4>
+            </div>
+        </div>
+    </div>
+    <div class="content-index">
+        <div class="card-container-index">
+            <h2 id="note-title">Công việc</h2>
+            {% for task in congViecNguoiDung %}
+                <div class="card">
+                    <h4>{{ task.TieuDe }}</h4>
+                    {% if task.TrangThai == "Hoàn thành" %}
+                    <p class="green">{{ task.TrangThai }}</p>
+                    {% endif %}
+                    {% if task.TrangThai == "Đang thực hiện" %}
+                    <p class="blue">{{ task.TrangThai }}</p>
+                    {% endif %}
+                    {% if task.TrangThai == "Đã hủy" %}
+                    <p class="red">{{ task.TrangThai }}</p>
+                    {% endif %}              
+                </div>
+            {% endfor %}
+            <div class="card card-add">
+                <h4>
+                    <a href="{{ url_for('cong_viec') }}"><i class="fa-solid fa-plus add-index"></i></a>        </h4>
+            </div>
+        </div>
+    </div>
+    
+</main>
+</body>
+</html>

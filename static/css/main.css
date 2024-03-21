@@ -1,0 +1,545 @@
+:root {
+    --white-color: white;
+    --blue-color: blue;
+    --black-color: black;
+    --green-color: green;
+    --light-gray-color: lightgray;
+    --gray-color: gray;
+    --red-color: red;
+    --sidebar-width: 220px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+header {
+    position: relative;
+}
+
+#username {
+    padding-left: 250px;
+    position: relative;
+    z-index: 3;
+    top: 10px;
+    color: var(--white-color);
+}
+
+#header-image {
+    background-image: url(https://techpal.vn/wp-content/uploads/2021/07/header-background.png);
+    height: 200px;
+    transform: translateY(-28px);
+}
+
+.sidebar {
+    background-color: var(--black-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+    height: 100vh;
+    width: var(--sidebar-width);
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 2;
+}
+
+#web-name {
+    color: var(--green-color);
+    position: absolute;
+    width: 100%;
+    top: 10%;
+    text-align: center;
+}
+
+.sidebar a {
+    display: block;
+    color: var(--light-gray-color);
+    padding: 10px 20px;
+    font-size: 1.5rem;
+}
+
+.sidebar a:hover {
+    color: var(--green-color);
+}
+
+.content-note {
+    margin-left: 240px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    background-color: transparent;
+    border-radius: 10px;
+    width: calc(100vw - 280px);
+    padding: 20px;
+    display: flex;
+}
+
+.red {
+    color: var(--red-color);
+}
+
+.blue {
+    color: var(--blue-color);
+}
+
+.green {
+    color: green;
+}
+
+.white {
+    color: white;
+}
+
+.bg-red {
+    background-color: red;
+}
+
+.bg-green {
+    background-color: green;
+}
+
+.note-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    width: 40%;
+    background-color: var(--light-gray-color);
+    padding: 10px;
+    border-radius: 10px;
+    min-height: 85vh;
+}
+
+.form-add-note {
+    padding: 10px;
+    border-radius: 10px;
+    width: 55%;
+    margin-left: 5%;
+    background-color: var(--light-gray-color);
+}
+
+.note {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 5px;
+    width: calc(50% - 5px);
+    box-sizing: border-box;
+    position: relative;
+    min-height: 150px;
+    max-height: 250px;
+    padding-bottom: 25px;
+}
+
+#time {
+    position: absolute;
+    bottom: 5px;
+    left: 5px;
+}
+
+.delete-note {
+    border: none;
+    background-color: transparent;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
+
+.edit-note-button {
+    border: none;
+    background-color: transparent;
+    position: absolute;
+    top: 5px;
+    right: 20px;
+}
+
+.note h4 {
+    padding-right: 30px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#note-title,
+#note-title::placeholder {
+    width: 100%;
+    border: none;
+    background-color: var(--gray-color);
+    color: var(--white-color);
+    padding: 5px;
+    border-radius: 5px;
+    outline: none;
+
+
+}
+
+#note-content {
+    margin: 10px 0;
+    width: 100%;
+    border: none;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: var(--gray-color);
+    color: var(--white-color);
+    outline: none;
+    min-height: 50%;
+}
+
+#note-content::placeholder {
+    color: var(--white-color);
+}
+
+#create-note {
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+
+.content-task {
+    margin-left: 250px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    background-color: transparent;
+    border-radius: 10px;
+    width: calc(100vw - 280px);
+    padding: 20px;
+    display: flex;
+}
+
+.task-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    width: 40%;
+    background-color: var(--light-gray-color);
+    padding: 10px;
+    border-radius: 10px;
+    min-height: 85vh;
+}
+
+.form-add-task {
+    padding: 10px;
+    border-radius: 10px;
+    width: 55%;
+    margin-left: 5%;
+    background-color: var(--light-gray-color);
+}
+
+.task {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 5px;
+    width: calc(50% - 5px);
+    box-sizing: border-box;
+    position: relative;
+    min-height: 150px;
+    max-height: 250px;
+    padding-bottom: 25px;
+}
+#note-title{
+    background-color: transparent;
+    color: var(--black-color);
+}
+#time {
+    position: absolute;
+    bottom: 5px;
+    left: 5px;
+}
+
+.delete-task {
+    border: none;
+    background-color: transparent;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
+
+.edit-task-button {
+    border: none;
+    background-color: transparent;
+    position: absolute;
+    top: 5px;
+    right: 20px;
+}
+
+.task h4 {
+    padding-right: 30px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#task-title,
+#task-title::placeholder {
+    width: 100%;
+    border: none;
+    background-color: var(--gray-color);
+    color: var(--white-color);
+    padding: 5px;
+    border-radius: 5px;
+    outline: none;
+}
+
+#task-content {
+    margin: 10px 0;
+    width: 100%;
+    border: none;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: var(--gray-color);
+    color: var(--white-color);
+    outline: none;
+    min-height: 50%;
+}
+
+#note-content::placeholder {
+    color: var(--white-color);
+}
+
+#create-task {
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* Thêm CSS cho bảng lịch và phủ toàn bộ màn hình */
+#calendar-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-height: 70vh;
+
+}
+
+.calendar {
+    position: relative;
+    text-align: center;
+    /* Để căn giữa nút "Thêm sự kiện" */
+    width: 75%;
+    display: inline-block;
+    margin-left: 20px;
+    background-color: var(--light-gray-color);
+    padding: 10px;
+    border-radius: 5px;
+
+}
+
+.container-event {
+    display: flex;
+    margin-left: 230px;
+    justify-content: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.calendar-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+/* Thêm CSS cho ô ngày trong bảng lịch */
+.calendar-day {
+    background-color: var(--light-gray-color);
+    text-align: center;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border: 1px solid var(--black-color);
+   
+}
+
+/* Thêm CSS cho ô ngày khi hover */
+.calendar-day:hover {
+    background-color: var(--blue-color);
+    color: var(--white-color);
+}
+
+/* CSS cho ô ngày đã chọn (ví dụ: khi hiển thị form thêm sự kiện) */
+.selected-day {
+    background-color: var(--blue-color);
+    color: var(--white-color);
+}
+
+/* CSS cho form thêm sự kiện */
+.event-form {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    box-shadow: 0 0 5px var(--black-color);
+    padding: 20px;
+    border-radius: 5px;
+    display: none;
+    z-index: 999;
+}
+
+.event-form h2 {
+    text-align: center;
+}
+
+.event-form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.event-form button[type="submit"] {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: var(--green-color);
+    color: var(--white-color);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#close-event-form {
+    position: absolute;
+    background-color: transparent;
+    top: 5px;
+    right: 5px;
+
+    color: var(--black-color);
+    border: none;
+}
+
+/* Thêm CSS cho nút "Thêm sự kiện" */
+#add-event-button {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: var(--green-color);
+    color: var(--white-color);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#prev-month,
+#next-month {
+    border: none;
+    background-color: transparent;
+    font-size: 1.4rem;
+    padding: 5px;
+    margin: 5px;
+    border-radius: 5px;
+}
+
+#prev-month:hover,
+#next-month:hover {
+    color: var(--blue-color);
+}
+
+.schedules-container {
+    width: 20%;
+    display: inline-block;
+    padding: 5px;
+    background-color: var(--light-gray-color);
+    border-radius: 5px;
+}
+
+.schedules {
+    background-color: var(--blue-color);
+    padding: 5px;
+    margin: 5px;
+    position: relative;
+}
+
+.delete-event {
+    position: absolute;
+    border: none;
+    background-color: transparent;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
+
+.event-day {
+    background-color: var(--blue-color);
+    /* Màu nền cho các ngày sự kiện */
+    color: var(--white-color);
+    /* Màu chữ trên các ngày sự kiện */
+    font-weight: bold;
+    /* Chữ đậm cho các ngày sự kiện */
+}
+
+/* Thêm mã CSS này để hiển thị tiêu đề sự kiện khi di chuột qua ô lịch */
+.calendar-day.event-day:hover::before {
+    content: attr(data-event-title);
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.9);
+    border: 1px solid #ddd;
+    padding: 5px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+}
+
+.save-note-button,
+#add-note-button,
+#reset-note {
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+#task-status {
+    margin: 10px 0;
+}
+
+.content-index {
+    margin-left: 240px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    background-color: var(--light-gray-color);
+    border-radius: 10px;
+    width: calc(100vw - 280px);
+    padding: 20px;
+    display: flex;
+    transform: translateY(-150px);
+    box-shadow: 0 0 10px var(--gray-color);
+}
+
+.card-container-index {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    width: 100%;
+    background-color: transparent;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.card {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 5px;
+    width: calc(25% - 10px);
+    box-sizing: border-box;
+    position: relative;
+    min-height: 200px;
+    padding-bottom: 25px;
+}
+
+.card-add {
+    position: relative;
+}
+
+.add-index {
+    font-size: 3rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
